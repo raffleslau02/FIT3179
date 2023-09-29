@@ -1,0 +1,98 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Life Expectancy vs. Total Expenditure in Year 2014",
+    "width": 800,
+    "height": 600,
+    "data": {
+      "url": "https://raw.githubusercontent.com/raffleslau02/FIT3179/main/dataset/Life_Expectancy_Data.csv"
+    },
+    "params": [
+      {
+        "name": "Population",
+        "value": 0,
+        "bind": {
+          "input": "range",
+          "min": 0,
+          "max": 1300000000,
+          "step": 1000000,
+          "name": "Minimum Population: "
+        }
+      }
+    ],
+  
+    "transform": [
+      {"filter": {"field": "Year", "equal": 2014}},
+      {"filter": "datum.life_expectancy > 0"},
+      {"filter": "datum.Total_expenditure > 0"},
+      {"filter": "datum.Population > Population"}
+    ],
+    "encoding": {
+      "x": {
+        "field": "life_expectancy", 
+        "type": "quantitative", 
+        "title": "Life Expectancy",
+        "scale": {"type": "linear"} 
+      },
+      "y": {
+        "field": "Total_expenditure", 
+        "type": "quantitative", 
+        "title": "Total Expenditure (%)",
+        "scale": {
+          "type": "linear", 
+          "domain": [13, 0], 
+          "range": [0, 600] 
+        }
+      }
+    },
+    "layer": [
+      {
+        "mark": "circle",
+        "encoding": {
+          "size": {
+            "field": "Population",
+            "type": "quantitative",
+            "scale": {
+              "type": "threshold",
+              "domain": [1000000, 50000000, 100000000, 500000000, 1000000000],
+              "range": [10, 50, 150, 200, 300, 400]
+            },
+            "legend": {"format": ".1s"}
+          },
+          "opacity": {"value": 0.6},
+          "tooltip": [
+            {"field": "Country", "type": "nominal"},
+            {"field": "Population", "type": "quantitative", "format": ","},
+            {"field": "life_expectancy", "type": "quantitative", "format": ","},
+            {"field": "Total_expenditure", "type": "quantitative", "format": ","}
+          ]
+        }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "align": "right",
+          "baseline": "middle",
+          "dx": -12,
+          "fontSize": 11.5,
+          "fontStyle": "italic"
+        },
+        "encoding": {
+          "text": {"field": "Country", "type": "nominal"},
+          "color": {"value": "black"},
+          "opacity": {
+            "condition": {
+              "test": "datum['Country'] == 'China' || datum['Country'] == 'France' || datum['Country'] == 'Australia' || datum['Country'] == 'Myanmar' || datum['Country'] == 'South Africa' || datum['Country'] == 'Nigeria' ||  datum['Country'] == 'Russian Federation'",
+              "value": 1
+            },
+            "value": 0
+          },
+          "tooltip": [
+            {"field": "Country", "type": "nominal", "title": "Country: "},
+            {"field": "Population", "type": "quantitative", "format": ",", "title": "Population: "},          
+            {"field": "life_expectancy", "type": "quantitative", "format": ",", "title": "Life Expectancy: "},
+            {"field": "Total_expenditure", "type": "quantitative", "format": ",", "title": "Total Expenditure: "}
+          ]
+        }
+      }
+    ]
+  }
