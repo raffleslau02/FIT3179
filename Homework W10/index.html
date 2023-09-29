@@ -24,19 +24,27 @@
   <!-- Add custom CSS to control layout -->
   <style>
     /* CSS for chart containers */
+    .page {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
     .vis-container {
-      border: 1px solid #ddd; /* Add a border to separate charts */
-      padding: 10px; /* Add padding to create space around charts */
-      margin: 10px; /* Add margin to create space between charts */
-      width: calc(50% - 20px); /* Set the width of each chart container to 50% minus padding and margin */
-      box-sizing: border-box; /* Include padding and border in the total width */
+      flex: 1;
+      border: 1px solid #ddd;
+      padding: 10px;
+      margin: 10px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     /* CSS for chart titles */
     .chart-title {
-      font-size: 18px; /* Adjust the font size as needed */
-      font-weight: bold; /* Make the title bold */
-      margin-bottom: 10px; /* Add some space below the title */
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
     }
   </style>
 </head>
