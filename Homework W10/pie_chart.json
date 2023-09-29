@@ -2,7 +2,7 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": "Status of Countries in 2014",
     "data": {
-      "url": "https://raw.githubusercontent.com/raffleslau02/FIT3179/main/dataset/Life_Expectancy_Data.csv"
+      "url": "https://raw.githubusercontent.com/raffleslau02/FIT3179/main/Homework%20W10/dataset/Life_Expectancy_Data.csv"
     },
     "transform": [
       {
