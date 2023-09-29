@@ -40,7 +40,7 @@
         "scale": {
           "type": "linear", 
           "domain": [13, 0], 
-          "range": [0, 600] 
+          "range": [0, 400] 
         }
       }
     },
