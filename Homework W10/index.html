@@ -26,18 +26,16 @@
     /* CSS for chart containers */
     .page {
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: center;
     }
 
     .vis-container {
-      flex: 1;
       border: 1px solid #ddd;
       padding: 10px;
       margin: 10px;
       box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      width: 80%; /* Adjust the width as needed */
     }
 
     /* CSS for chart titles */
@@ -61,22 +59,17 @@
     </div>
     <!-- end pure grid group -->
 
-    <!-- pure grid group -->
-    <div class="pure-g">
-      <div class="pure-u-1-2">
-        <div class="vis-container">
-          <h2 class="chart-title">Life Expectancy vs. Total Expenditure in Year 2014</h2>
-          <div id="vis1"></div>
-        </div>
-      </div>
-      <div class="pure-u-1-2">
-        <div class="vis-container">
-          <h2 class="chart-title">Status of Countries in 2014</h2>
-          <div id="vis2"></div>
-        </div>
-      </div>
+    <!-- First Chart -->
+    <div class="vis-container">
+      <h2 class="chart-title">Life Expectancy vs. Total Expenditure in Year 2014</h2>
+      <div id="vis1"></div>
     </div>
-    <!-- end pure grid group -->
+
+    <!-- Second Chart -->
+    <div class="vis-container">
+      <h2 class="chart-title">Status of Countries in 2014</h2>
+      <div id="vis2"></div>
+    </div>
 
   </div> <!-- end page -->
 
