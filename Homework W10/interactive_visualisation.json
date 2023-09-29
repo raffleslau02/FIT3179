@@ -81,7 +81,7 @@
           "color": {"value": "black"},
           "opacity": {
             "condition": {
-              "test": "datum['Country'] == 'China' || datum['Country'] == 'France' || datum['Country'] == 'Australia' || datum['Country'] == 'Myanmar' || datum['Country'] == 'South Africa' || datum['Country'] == 'Nigeria' ||  datum['Country'] == 'Russian Federation'",
+              "test": "datum['Country'] == 'China' || datum['Country'] == 'France' || datum['Country'] == 'Australia' || datum['Country'] == 'India' || datum['Country'] == 'South Africa' || datum['Country'] == 'Nigeria' ||  datum['Country'] == 'Russian Federation'",
               "value": 1
             },
             "value": 0
