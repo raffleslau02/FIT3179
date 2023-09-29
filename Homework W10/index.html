@@ -81,8 +81,14 @@
   </div> <!-- end page -->
 
   <script type="text/javascript">
-    var specVis1 = "./interactive_visualisation.json"; 
-    var specVis2 = "./pie_chart.json"; 
+    var specVis1 = {
+      "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+      "width": 300, // Adjust the width as needed
+      "height": 250, // Adjust the height as needed
+      // Rest of your Vega-Lite specification for the first chart
+    };
+
+    var specVis2 = "./pie_chart.json";
 
     vegaEmbed('#vis1', specVis1, { "actions": false });
     vegaEmbed('#vis2', specVis2, { "actions": false }).then(function (result) {
