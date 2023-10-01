@@ -1,62 +1,70 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": {
-      "text": "Top 5 Countries with Highest Life Expectancy in 2014",
-      "fontSize": 20
-    },
-    "width": 700,
-    "height": 350,
-    "data": {
-      "url": "https://raw.githubusercontent.com/raffleslau02/FIT3179/main/dataset/Life_Expectancy_Data.csv"
-    },
-    "transform": [
-      {
-        "filter": {
-          "field": "Year",
-          "equal": 2014
-        }
-      },
-      {
-        "window": [
-          {
-            "op": "rank",
-            "as": "rank"
-          }
-        ],
-        "sort": [
-          {
-            "field": "life_expectancy",
-            "order": "descending"
-          }
-        ]
-      },
-      {
-        "filter": {
-          "field": "rank",
-          "lte": 5
-        }
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Top 5 Countries with Highest Life Expectancy and Their HDI",
+    "fontSize": 20
+  },
+  "width": 600,
+  "height": 400,
+  "data": {
+    "url": "https://raw.githubusercontent.com/raffleslau02/FIT3179/main/dataset/Life_Expectancy_Data.csv"
+  },
+  "transform": [
+    {
+      "filter": {
+        "field": "Year",
+        "equal": 2014
       }
-    ],
-    "mark": {
-      "type": "bar"
     },
-    "encoding": {
-      "x": {"field": "life_expectancy", "type": "quantitative", "title": "Life Expectancy"},
-      "y": {
-        "field": "Country",
-        "type": "nominal",
-        "sort": "-x"
-      },
-      "color": {
-        "field": "Country",
-        "type": "nominal",
-        "scale": {
-        "range": ["#7687CC", "#C59269", "#DFD918", "#18BDA6", "#CB8BB5"] 
-      }
-      },
-      "tooltip": [
-        {"field": "Country", "type": "nominal", "title": "Country: "},
-        {"field": "life_expectancy", "type": "quantitative", "title": "Life Expectancy: "}
+    {
+      "window": [
+        {
+          "op": "rank",
+          "as": "rank"
+        }
+      ],
+      "sort": [
+        {
+          "field": "life_expectancy",
+          "order": "descending"
+        }
       ]
+    },
+    {
+      "filter": {
+        "field": "rank",
+        "lte": 5
+      }
     }
+  ],
+  "mark": {
+    "type": "bar"
+  },
+"encoding": {
+  "x": {
+    "field": "Country",
+    "type": "nominal",
+    "sort": "-y",
+    "axis": {
+      "labelAngle": 0 
+    }
+  },
+    "y": {
+      "field": "Income_composition_of_resources",
+      "type": "quantitative",
+      "title": "Human Development Index (HDI)"
+    },
+    "color": {
+      "field": "Country",
+      "type": "nominal",
+      "scale": {
+      "range": ["#7687CC", "#C59269", "#DFD918", "#18BDA6", "#CB8BB5"] 
+      }
+    },
+    "tooltip": [
+      {"field": "Country", "type": "nominal", "title": "Country: "},
+      {"field": "Income_composition_of_resources", "type": "quantitative", "title": "HDI: "},
+      {"field": "life_expectancy", "type": "quantitative", "title": "Life Expectancy: "}
+    ]
   }
+}
