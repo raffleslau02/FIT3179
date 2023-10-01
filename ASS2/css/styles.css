@@ -11,7 +11,7 @@ body {
 }
 
 .page {
-  width: 70vw; /* Set the page width to 100% of the viewport width */
+  width: 55vw; /* Set the page width to 100% of the viewport width */
   background-color: white;
   margin: auto;
   padding: 50px;
