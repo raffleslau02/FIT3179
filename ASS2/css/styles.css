@@ -17,6 +17,7 @@ body {
   margin: auto;
   padding: 50px;
   padding-top: 35px;
+  padding-bottom: 50px; /* Increase padding to add space at the bottom */
 }
 
 .vis-container {
