@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Homework Assessment Week 10</title>
+  <title>FIT3179 Assignment 2</title>
   <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
   <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
@@ -20,43 +20,117 @@
 
   <!-- CSS file -->
   <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
-
+  <style>
+    /* Custom CSS for layout and background color */
+    body {
+      background-color: #f0f0f0; /* Set your desired background color here */
+      font-family: 'Open Sans', sans-serif;
+      margin: 20px;
+      padding: 20px;
+    }
+    .page {
+      background-color: #ffffff; /* Set your desired background color for the content area */
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    }
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    .introduction {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+    .chart-container {
+      display: flex;
+      flex-direction: column; /* Change to "row" if you want charts side by side */
+      align-items: center; /* Change to "flex-start" or "flex-end" for chart alignment */
+    }
+    .chart {
+      margin-top: 20px;
+    }
+    .explanation {
+      font-size: 14px;
+    }
+  </style>
+  <!-- End custom CSS -->
 </head>
 
 <body>
 
   <div class="page">
 
-    <!-- pure grid group -->
-    <div class="pure-g">
-      <div class="pure-u-1-1">
-        <h1>Homework Assessment Week 10</h1>
-      </div>
-    </div>
-    <!-- end pure grid group -->
+    <!-- Title -->
+    <h1>Life Expectancy Insights: A Multi-Chart Analysis for the Year 2014</h1>
 
-    <!-- pure grid group -->
-    <div class="pure-g">
-      <div class="pure-u-1-2">
-        <div id="vis1" class="vis-container"></div>
-      </div>
-      <div class="pure-u-1-2">
-        <div id="vis2" class="vis-container"></div>
+    <!-- Introduction -->
+    <div class="introduction">
+      Your introduction text goes here. Provide context and background information for the charts.
+    </div>
+
+    <!-- Charts and Explanations -->
+    <div class="chart-container">
+      <!-- Chart 1 -->
+      <div id="vis1" class="chart"></div>
+      <!-- Explanation for Chart 1 (Beside or Underneath) -->
+      <div class="explanation">
+        Explanation for Chart 1 goes here. Describe the data, trends, and insights from the chart.
       </div>
     </div>
-    <!-- end pure grid group -->
+
+    <div class="chart-container">
+      <!-- Chart 2 -->
+      <div id="vis2" class="chart"></div>
+      <!-- Explanation for Chart 2 (Beside or Underneath) -->
+      <div class="explanation">
+        Explanation for Chart 2 goes here. Describe the data, trends, and insights from the chart.
+      </div>
+    </div>
+
+    <!-- Add more chart containers and explanations for your other charts here -->
+    <!-- Chart 3 -->
+    <div class="chart-container">
+      <div id="vis3" class="chart"></div>
+      <div class="explanation">
+        Explanation for Chart 3 goes here.
+      </div>
+    </div>
+
+    <!-- Chart 4 -->
+    <div class="chart-container">
+      <div id="vis4" class="chart"></div>
+      <div class="explanation">
+        Explanation for Chart 4 goes here.
+      </div>
+    </div>
+
+    <!-- Chart 5 -->
+    <div class="chart-container">
+      <div id="vis5" class="chart"></div>
+      <div class="explanation">
+        Explanation for Chart 5 goes here.
+      </div>
+    </div>
 
   </div> <!-- end page -->
 
   <script type="text/javascript">
-    var specVis1 = "js/interactive_visualisation.vg.json"; 
-    var specVis2 = "js/pie_chart.json"; 
+    var specVis1 = "./correlation.json"; 
+    var specVis2 = "./map.json";
+    var specVis3 = "./pie_chart.json";
+    var specVis4 = "./top5bar.json";
+    var specVis5 = "./total_expenditure_bubble.json"; 
 
     vegaEmbed('#vis1', specVis1, { "actions": false });
     vegaEmbed('#vis2', specVis2, { "actions": false }).then(function (result) {
       // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
+    vegaEmbed('#vis3', specVis3, { "actions": false });
+    vegaEmbed('#vis4', specVis4, { "actions": false });
+    vegaEmbed('#vis5', specVis5, { "actions": false });
   </script>
 </body>
 
 </html>
+
