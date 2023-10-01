@@ -41,7 +41,7 @@
       "type": "bar"
     },
     "encoding": {
-      "x": {"field": "life_expectancy", "type": "quantitative"},
+      "x": {"field": "life_expectancy", "type": "quantitative", "title": "Life Expectancy"},
       "y": {
         "field": "Country",
         "type": "nominal",
@@ -49,7 +49,10 @@
       },
       "color": {
         "field": "Country",
-        "type": "nominal"
+        "type": "nominal",
+        "scale": {
+        "range": ["#7687CC", "#C59269", "#DFD918", "#18BDA6", "#CB8BB5"] 
+      }
       },
       "tooltip": [
         {"field": "Country", "type": "nominal", "title": "Country: "},
