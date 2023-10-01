@@ -52,7 +52,7 @@
       "title": "Total Expenditure (%)",
       "scale": {
         "type": "linear", 
-        "domain": [18, 0], 
+        "domain": [13, 0], 
         "range": [0, 600] 
       }
     }
@@ -76,7 +76,7 @@
           "type": "nominal",
           "scale": {
             "domain": ["Developing", "Developed"],
-            "range": ["#e41a1c", "#984ea3"]
+            "range": ["#A96FD5", "#243CA9"]
           }
         },
         "opacity": {"value": 0.6},
