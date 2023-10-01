@@ -1,0 +1,64 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+      "text": "Correlation Heat Map",
+      "fontSize": 20  
+    },
+    "data": {
+      "values": [
+        {"row": "life_expectancy", "col": "life_expectancy", "correlation": 1.00000000},
+        {"row": "life_expectancy", "col": "adult_mortality", "correlation": -0.75862018},
+        {"row": "life_expectancy", "col": "infant_deaths", "correlation": -0.2355553},
+        {"row": "life_expectancy", "col": "Polio", "correlation": 0.40727329},
+        {"row": "life_expectancy", "col": "Measles", "correlation": -0.09670526},
+        {"row": "life_expectancy", "col": "Diphtheria", "correlation": 0.37592385},
+        {"row": "adult_mortality", "col": "life_expectancy", "correlation": -0.75862018},
+        {"row": "adult_mortality", "col": "adult_mortality", "correlation": 1.00000000},
+        {"row": "adult_mortality", "col": "infant_deaths", "correlation": 0.1763049},
+        {"row": "adult_mortality", "col": "Polio", "correlation": -0.38102879},
+        {"row": "adult_mortality", "col": "Measles", "correlation": 0.09157462},
+        {"row": "adult_mortality", "col": "Diphtheria", "correlation": -0.30284597},
+        {"row": "infant_deaths", "col": "life_expectancy", "correlation": -0.23555534},
+        {"row": "infant_deaths", "col": "adult_mortality", "correlation": 0.17630490},
+        {"row": "infant_deaths", "col": "infant_deaths", "correlation": 1.0000000},
+        {"row": "infant_deaths", "col": "Polio", "correlation": -0.12590382},
+        {"row": "infant_deaths", "col": "Measles", "correlation": 0.70347800},
+        {"row": "infant_deaths", "col": "Diphtheria", "correlation": -0.12708139},
+        {"row": "Polio", "col": "life_expectancy", "correlation": 0.40727329},
+        {"row": "Polio", "col": "adult_mortality", "correlation": -0.38102879},
+        {"row": "Polio", "col": "infant_deaths", "correlation": -0.1259038},
+        {"row": "Polio", "col": "Polio", "correlation": 1.00000000},
+        {"row": "Polio", "col": "Measles", "correlation": -0.05272564},
+        {"row": "Polio", "col": "Diphtheria", "correlation": 0.75248846},
+        {"row": "Measles", "col": "life_expectancy", "correlation": -0.09670526},
+        {"row": "Measles", "col": "adult_mortality", "correlation": 0.09157462},
+        {"row": "Measles", "col": "infant_deaths", "correlation": 0.7034780},
+        {"row": "Measles", "col": "Polio", "correlation": -0.05272564},
+        {"row": "Measles", "col": "Measles", "correlation": 1.00000000},
+        {"row": "Measles", "col": "Diphtheria", "correlation": -0.09836297},
+        {"row": "Diphtheria", "col": "life_expectancy", "correlation": 0.37592385},
+        {"row": "Diphtheria", "col": "adult_mortality", "correlation": -0.30284597},
+        {"row": "Diphtheria", "col": "infant_deaths", "correlation": -0.1270814},
+        {"row": "Diphtheria", "col": "Polio", "correlation": 0.75248846},
+        {"row": "Diphtheria", "col": "Measles", "correlation": -0.09836297},
+        {"row": "Diphtheria", "col": "Diphtheria", "correlation": 1}
+      ]
+    },
+    "mark": "rect",
+    "width": 400,
+    "height": 400,
+    "encoding": {
+      "x": {"field": "col", "type": "nominal", "title": "Variable 1"},
+      "y": {"field": "row", "type": "nominal", "title": "Variable 2"},
+      "color": {"field": "correlation", "type": "quantitative", "scale": {"domain": [-1, 1], "scheme": "greens"}},
+      "tooltip": [
+        {"field": "row", "type": "nominal", "title": "Variable 1: "},
+        {"field": "col", "type": "nominal", "title": "Variable 2: "},
+        {"field": "correlation", "type": "quantitative", "format": ".2f", "title": "Correlation: "}
+      ]
+    },
+    "config": {
+      "view": {"stroke": "transparent"},
+      "axis": {"domainWidth": 1}
+    }
+  }

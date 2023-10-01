@@ -1,0 +1,59 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+      "text": "Top 5 Countries with Highest Life Expectancy in 2014",
+      "fontSize": 20
+    },
+    "width": 700,
+    "height": 350,
+    "data": {
+      "url": "https://raw.githubusercontent.com/raffleslau02/FIT3179/main/dataset/Life_Expectancy_Data.csv"
+    },
+    "transform": [
+      {
+        "filter": {
+          "field": "Year",
+          "equal": 2014
+        }
+      },
+      {
+        "window": [
+          {
+            "op": "rank",
+            "as": "rank"
+          }
+        ],
+        "sort": [
+          {
+            "field": "life_expectancy",
+            "order": "descending"
+          }
+        ]
+      },
+      {
+        "filter": {
+          "field": "rank",
+          "lte": 5
+        }
+      }
+    ],
+    "mark": {
+      "type": "bar"
+    },
+    "encoding": {
+      "x": {"field": "life_expectancy", "type": "quantitative"},
+      "y": {
+        "field": "Country",
+        "type": "nominal",
+        "sort": "-x"
+      },
+      "color": {
+        "field": "Country",
+        "type": "nominal"
+      },
+      "tooltip": [
+        {"field": "Country", "type": "nominal", "title": "Country: "},
+        {"field": "life_expectancy", "type": "quantitative", "title": "Life Expectancy: "}
+      ]
+    }
+  }
