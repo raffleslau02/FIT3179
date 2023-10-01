@@ -1,4 +1,4 @@
-body *{
+body * {
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -11,7 +11,8 @@ body {
 }
 
 .page {
-  width: 55vw; /* Set the page width to 100% of the viewport width */
+  width: 90%; /* Adjust the page width as needed */
+  max-width: 1200px; /* Add a maximum width to prevent issues on larger screens */
   background-color: white;
   margin: auto;
   padding: 50px;
@@ -20,6 +21,7 @@ body {
 
 .vis-container {
   width: 100%;
+  max-width: 100%; /* Set a maximum width for charts */
 }
 
 .description h2,
