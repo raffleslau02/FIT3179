@@ -29,7 +29,13 @@
   "mark": "arc",
   "encoding": {
     "theta": {"field": "count", "type": "quantitative"},
-    "color": {"field": "Status", "type": "nominal"},
+    "color": {
+      "field": "Status",
+      "type": "nominal",
+      "scale": {
+        "range": ["#243CA9", "#A96FD5", "#2ca02c"] 
+      }
+    },
     "tooltip": [
       {"field": "Status", "type": "nominal", "title": "Status: "},
       {"field": "count", "type": "quantitative", "title": "Count: "},
