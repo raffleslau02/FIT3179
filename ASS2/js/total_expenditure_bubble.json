@@ -33,7 +33,7 @@
   ],
 
   "transform": [
-    {"filter": {"field": "Year", "equal": 2005}},
+    {"filter": {"field": "Year", "equal": 2014}},
     {"filter": "datum.life_expectancy > 0"},
     {"filter": "datum.Total_expenditure > 0"},
     {"filter": "datum.Population > Population"},
@@ -102,7 +102,7 @@
         "color": {"value": "black"},
         "opacity": {
           "condition": {
-            "test": "datum['Country'] == 'China' || datum['Country'] == 'France' || datum['Country'] == 'Australia' || datum['Country'] == 'Myanmar' || datum['Country'] == 'Italy' || datum['Country'] == 'Nigeria' ||  datum['Country'] == 'Ireland'",
+            "test": "datum['Country'] == 'Germany' || datum['Country'] == 'Belgium' || datum['Country'] == 'Finland' || datum['Country'] == 'Portugal' || datum['Country'] == 'Greece' || datum['Country'] == 'India' ||  datum['Country'] == 'Sierra Leone'",
             "value": 1
           },
           "value": 0
