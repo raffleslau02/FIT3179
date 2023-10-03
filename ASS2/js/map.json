@@ -1,22 +1,27 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {
-    "text": "Life Expectancy in 2014",
-    "fontSize": 28
-  },
+    "title": {
+      "text": "Life Expectancy in 2014",
+      "fontSize": 28  
+    },
   "width": 800,
   "height": 400,
-  "data": {
-    "url": "https://raw.githubusercontent.com/raffleslau02/FIT3179/main/json/ne_110m_admin_0_countries.json",
-    "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"},
-    "transform": [
-      {
-        "filter": {"field": "Year", "equal": 2014}
-      }
-    ]
+  "projection": {
+    "type": "equalEarth"
   },
-  "projection": {"type": "equalEarth"},
+  "data": {
+    "url": "https://raw.githubusercontent.com/raffleslau02/FIT3179/main/ASS2/js/ne_110m_admin_0_countries.json",
+    "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
+  },
+  
   "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/raffleslau02/FIT3179/main/ASS2/js/oceans.json",
+        "format": {"type": "topojson", "feature": "oceans"}
+      },
+      "mark": {"type": "geoshape", "fill": "skyblue"}
+    },
     {
       "transform": [
         {"calculate": "'Data is not available in ' + datum.properties.NAME", "as": "note"}
@@ -27,6 +32,13 @@
           "field": "note"
         }
       }
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/raffleslau02/FIT3179/main/ASS2/js/ne_110m_admin_0_countries.json",
+        "format": {"type": "topojson", "feature": "ne_110m_graticules_30"}
+      },
+      "mark": {"type": "geoshape", "fill": null, "stroke": "lightgray"}
     },
     {
       "transform": [
@@ -62,3 +74,8 @@
     }
   ]
 }
+
+
+
+
+
