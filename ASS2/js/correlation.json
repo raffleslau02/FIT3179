@@ -2,7 +2,7 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": {
       "text": "Correlation Heat Map",
-      "fontSize": 20  
+      "fontSize": 28  
     },
     "data": {
       "values": [
