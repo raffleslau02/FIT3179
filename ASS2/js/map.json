@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "Life Expectancy in 2014",
-    "fontSize": 20
+    "fontSize": 32
   },
   "width": 800,
   "height": 400,
