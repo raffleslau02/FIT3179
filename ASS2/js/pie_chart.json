@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "Status of Countries in 2014",
-    "fontSize": 20  
+    "fontSize": 28  
   },
   "width": 400,
   "height": 400,
