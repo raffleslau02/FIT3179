@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "Top 5 Countries with Highest Life Expectancy and Their HDI",
-    "fontSize": 20
+    "fontSize": 28
   },
   "width": 600,
   "height": 400,
