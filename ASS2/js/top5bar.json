@@ -7,7 +7,7 @@
   "width": 600,
   "height": 400,
   "data": {
-    "url": "https://raw.githubusercontent.com/raffleslau02/FIT3179/main/dataset/life_exp.csv"
+    "url": "https://raw.githubusercontent.com/raffleslau02/FIT3179/main/ASS2/Life_Expectancy_Data.csv"
   },
   "transform": [
     {
