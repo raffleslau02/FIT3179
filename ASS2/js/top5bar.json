@@ -11,10 +11,7 @@
   },
   "transform": [
     {
-      "filter": {
-        "field": "Year",
-        "equal": 2014
-      }
+      "filter": {"field": "Year","equal": 2014}
     },
     {
       "window": [
@@ -31,10 +28,7 @@
       ]
     },
     {
-      "filter": {
-        "field": "rank",
-        "lte": 5
-      }
+      "filter": {"field": "rank","lte": 5}
     }
   ],
   "mark": {
