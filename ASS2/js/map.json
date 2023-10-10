@@ -1,9 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": {
-      "text": "Life Expectancy in 2014",
-      "fontSize": 28  
-    },
+  "title": {
+    "text": "Life Expectancy in 2014",
+    "fontSize": 28
+  },
   "width": 800,
   "height": 400,
   "projection": {
@@ -13,7 +13,6 @@
     "url": "https://raw.githubusercontent.com/raffleslau02/FIT3179/main/ASS2/js/ne_110m_admin_0_countries.json",
     "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
   },
-  
   "layer": [
     {
       "data": {
@@ -66,15 +65,135 @@
           }
         },
         "tooltip": [
-          {"field": "properties.NAME", "type": "nominal", "title": "Country: "},
-          {"field": "Life Expectancy", "type": "quantitative", "title": "Life Expectancy: "},
-          {"field": "Status", "type": "nominal", "title": "Status: "},
-          {"field": "BMI", "type": "quantitative", "title": "BMI: "},
-          {"field": "adult_mortality", "type": "quantitative", "title": "Adult Mortality per 1000 population: "},
-          {"field": "infant_deaths", "type": "quantitative", "title": "Infant Deaths per 1000 population: "}
-
+          {"field": "properties.NAME", "type": "nominal", "title": "Country"},
+          {"field": "Life Expectancy", "type": "quantitative", "title": "Life Expectancy "},
+          {"field": "Status", "type": "nominal", "title": "Status"},
+          {"field": "BMI", "type": "quantitative", "title": "BMI"},
+          {"field": "adult_mortality", "type": "quantitative", "title": "Adult Mortality per 1000 population"},
+          {"field": "infant_deaths", "type": "quantitative", "title": "Infant Deaths per 1000 population"}
         ]
       }
+    },
+{
+  "data": {
+    "values": [
+      {
+        "name": "Germany",
+        "latitude": 51.1657,
+        "longitude": 10.4515
+      },
+      {
+        "name": "Belgium",
+        "latitude": 50.8503,
+        "longitude": 4.3517
+      },
+      {
+        "name": "Finland",
+        "latitude": 61.9241,
+        "longitude": 25.7482
+      },
+      {
+        "name": "Portugal",
+        "latitude": 38.7223,
+        "longitude": -9.1393
+      }
+    ]
+  },
+  "mark": {"type": "point", "size": 10, "shape": "M0,.5L.6,.8L.5,.1L1,-.3L.3,-.4L0,-1L-.3,-.4L-1,-.3L-.5,.1L-.6,.8L0,.5Z"},
+  "encoding": {
+    "latitude": {"field": "latitude", "type": "quantitative"},
+    "longitude": {"field": "longitude", "type": "quantitative"}
+  }
+},
+{
+  "data": {
+    "values": [
+      {
+        "name": "Sierra Leone",
+        "latitude": 8.4606,
+        "longitude": -11.7799,
+        "life_expectancy": 48.1
+      },
+      {
+        "name": "Germany",
+        "latitude": 51.1657,
+        "longitude": 10.4515,
+        "life_expectancy": 89.0
+      },
+      {
+        "name": "Belgium",
+        "latitude": 50.8503,
+        "longitude": 4.3517,
+        "life_expectancy": 89.1
+      },
+      {
+        "name": "Finland",
+        "latitude": 61.9241,
+        "longitude": 25.7482,
+        "life_expectancy": 89.0
+      },
+      {
+        "name": "Portugal",
+        "latitude": 38.7223,
+        "longitude": -9.1393,
+        "life_expectancy": 89.0
+      }
+    ]
+  },
+  "transform": [
+    {
+      "calculate": "datum.life_expectancy >= 89 ? 'Highest' : 'Lowest'",
+      "as": "Life Expectancy Ranking"
     }
+  ],
+  "mark": {
+    "type": "point",
+    "size": 10,
+    "shape": "M0,.5L.6,.8L.5,.1L1,-.3L.3,-.4L0,-1L-.3,-.4L-1,-.3L-.5,.1L-.6,.8L0,.5Z"
+  },
+  "encoding": {
+    "latitude": {"field": "latitude", "type": "quantitative"},
+    "longitude": {"field": "longitude", "type": "quantitative"},
+    "color": {
+      "field": "Life Expectancy Ranking",
+      "type": "nominal",
+      "scale": {"domain": ["Highest", "Lowest"], "range": ["blue", "red"]}
+    }
+  }
+},
+    {
+      "data": {
+        "values": [
+          {"text": "Sierra Leone has the lowest life expectancy which is 48.1"}
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "bottom",
+        "dx": -65,
+        "dy": 0
+      },
+      "encoding": {
+        "text": {"field": "text", "type": "nominal"}
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {"text": "The countries with the highest life expectancy: 89 (denoted with blue star)"}
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "bottom",
+        "dx": -40,
+        "dy": -120
+      },
+      "encoding": {
+        "text": {"field": "text", "type": "nominal"}
+      }
+    }    
   ]
 }
