@@ -60,8 +60,8 @@
           "type": "quantitative",
           "scale": {
             "type": "threshold",
-            "domain": [50, 60, 65, 70, 75, 80, 85, 90], // Add more intervals within the 50-90 range
-            "range": ["#fdbe85", "#fdaa63", "#fd9660", "#fd8d3c", "#e6550d", "#a63603", "#ff0000", "#00ff00", "#0000ff"] // Adjust colors as needed
+            "domain": [50, 55, 60, 65, 70, 75, 80, 85, 90],
+            "range": ["#fdaa63", "#fd9660", "#fd8d3c", "#e6550d", "#d23f00", "#ba3700", "#a63603", "#8c2200", "#751900", "#5f0f00"]
           }
         },
         "tooltip": [
@@ -157,7 +157,7 @@
     "color": {
       "field": "Life Expectancy Ranking",
       "type": "nominal",
-      "scale": {"domain": ["Highest", "Lowest"], "range": ["blue", "green"]}
+      "scale": {"domain": ["Highest", "Lowest"], "range": ["lime", "blue"]}
     }
   }
 },
@@ -181,15 +181,16 @@
     {
       "data": {
         "values": [
-          {"text": "The countries with the highest life expectancy: 89"}
+          {"text": "Countries with the highest life expectancy: 89"}
         ]
       },
       "mark": {
         "type": "text",
         "align": "left",
         "baseline": "bottom",
-        "dx": -40,
-        "dy": -120
+        "dx": 50,
+        "dy": -155,
+        "color": "navy"
       },
       "encoding": {
         "text": {"field": "text", "type": "nominal"}
